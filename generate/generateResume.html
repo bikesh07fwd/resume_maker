@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+  <div class="root">
+
+
+    <div class="overlay" id="form_overlay">
+      <div class="form_container">
+        <div class="form_main_heading">Fill your Details</div>
+        <div class="form">
+
+          <div class="form_field">
+            <div class="field_heading">Name</div>
+            <div class="field_input">
+              <input placeholder="Enter your name" type="text"  id="name_input">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Position</div>
+            <div class="field_input">
+              <input placeholder="Enter your position" type="text"  id="position_input">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Bio</div>
+            <div class="field_input">
+              <textarea class="bio_text_area" id="bio_input"></textarea>
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">DOB</div>
+            <div class="field_input">
+              <input placeholder="Enter your position" type="date"  id="dob_input">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Address</div>
+            <div class="field_input">
+              <input placeholder="Enter your address" type="address"  id="addr_input">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Phone:</div>
+            <div class="field_input">
+              <input placeholder="Enter your phone number" type="number"  id="tel_input">
+            </div>
+          </div>
+
+
+          <div class="form_field">
+            <div class="field_heading">Email:</div>
+            <div class="field_input">
+              <input placeholder="Enter your email" type="email"  id="email_input">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">LinkedIn ID:</div>
+            <div class="field_input">
+              <input placeholder="Enter your LinkedIn ID" type="url"  id="linkedin_input">
+            </div>
+          </div>
+
+
+          <div class="form_field">
+            <div class="field_heading">Certificate 1 Details:</div>
+            <div class="field_input">
+              <input placeholder="Certificate Name" type="url"  id="cert1_name_input">
+              <input placeholder="Issuer Name" type="url"  id="cert1_issuer_input" style="margin-top: 5px;">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Certificate 2 Details:</div>
+            <div class="field_input">
+              <input placeholder="Certificate Name" type="url"  id="cert2_name_input">
+              <input placeholder="Issuer Name" type="url"  id="cert2_issuer_input" style="margin-top: 5px;">
+            </div>
+          </div>
+
+        
+
+
+          <div class="form_field">
+            <div class="field_heading">Project 1 Details:</div>
+            <div class="field_input">
+              <input placeholder="Project Name" type="url"  id="project1_name_input">
+              <input placeholder="Techstack Used" type="url"  id="project1_tech_input" style="margin-top: 5px;">
+            </div>
+          </div>
+
+
+
+          <div class="form_field">
+            <div class="field_heading">Project 2 Details:</div>
+            <div class="field_input">
+              <input placeholder="Project Name" type="url"  id="project2_name_input">
+              <input placeholder="Techstack Used" type="url"  id="project2_tech_input" style="margin-top: 5px;">
+            </div>
+          </div>
+
+
+          <div class="form_field">
+            <div class="field_heading">Experience 1 Details:</div>
+            <div class="field_input">
+              <input placeholder="Position" type="url"  id="exp1_pos_input">
+              <input placeholder="Company" type="url"  id="exp1_comp_input" style="margin-top: 5px;">
+              <input placeholder="Duration" type="url"  id="exp1_duration_input" style="margin-top: 5px;">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Experience 2 Details:</div>
+            <div class="field_input">
+              <input placeholder="Position" type="url"  id="exp2_pos_input">
+              <input placeholder="Company" type="url"  id="exp2_comp_input" style="margin-top: 5px;">
+              <input placeholder="Duration" type="url"  id="exp2_duration_input" style="margin-top: 5px;">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Skills:</div>
+            <div class="field_input">
+              <input placeholder="Skill 1" type="url"  id="skill1_input">
+              <input placeholder="Skill 2" type="url"  id="skill2_input" style="margin-top: 5px;">
+              <input placeholder="Skill 3" type="url"  id="skill3_input" style="margin-top: 5px;">
+              <input placeholder="Skill 4" type="url"  id="skill4_input" style="margin-top: 5px;">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="field_heading">Image:</div>
+            <div class="field_input">
+              <input placeholder="" type="file"  id="imgfile_input" accept="image/*">
+            </div>
+          </div>
+
+          <div class="form_field">
+            <div class="submit_button" id="submit_btn">Submit</div>
+          </div>
+
+         
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="resume_outer_container">
+
+      <div class="download_btn" id="download_btn_id"><ion-icon name="download"></ion-icon></div>
+
+
+      <div class="resume_main_container" id="resume_main_container_id">
+        
+        <div class="left">
+          <div class="info_left">
+            <div class="main_info">
+              <div class="name" id="res_name">BIKESH</div>
+              <div class="position" id="res_pos">INDIAN FOOTBALLER</div>
+              <div class="summary" id="res_summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis eius, optio ex aut dolor</div>
+            </div>
+            <div class="more_info">
+              
+              <div class="user_info_div">
+                <div class="heading">DOB:</div>
+                <div class="detail" id="res_dob">09/10/2004</div>
+              </div>
+
+              <div class="user_info_div">
+                <div class="heading">ADDRESS:</div>
+                <div class="detail" id="res_addr">F9/379, VAISHALI NAGAR, JAIPUR</div>
+              </div>
+
+              <div class="user_info_div">
+                <div class="heading">PHONE:</div>
+                <div class="detail" id="res_phone">+91 965XXXXXXX</div>
+              </div>
+
+              <div class="user_info_div">
+                <div class="heading">EMAIL:</div>
+                <div class="detail" id="res_email">swami.ayushing1@gmail.com</div>
+              </div>
+
+              <div class="user_info_div">
+                <div class="heading">LINKEDIN:</div>
+                <div class="detail" id="res_linked">@ayushswami</div>
+              </div>
+              
+
+            </div>
+
+            <div class="cert_info_container">
+              <div class="cert_heading">CERTIFICATIONS</div>
+              
+              <div class="cert_info">
+                <div class="cert_name" id="res_cert1_name">Google Cloud Engineer</div>
+                <div class="cert_issuer" id="res_cert1_issuer">Google</div>
+              </div>
+
+              <div class="cert_info">
+                <div class="cert_name" id="res_cert2_name">Google Cloud Engineer</div>
+                <div class="cert_issuer" id="res_cert2_issuer">Google</div>
+              </div>
+              
+          
+              
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        
+        <div class="right">
+          <div class="image_container">
+            <img src="https://ds393qgzrxwzn.cloudfront.net/resize/c500x500/cat1/img/images/0/52ooj4559c.jpg" alt="" id="dp">
+          </div>
+          <div class="info_right">
+
+            <div class="projects">
+              <div class="cert_info_container">
+                <div class="cert_heading">PROJECTS</div>
+                
+                <div class="cert_info">
+                  <div class="cert_name" id="res_p1_name">Social Media Application</div>
+                  <div class="cert_issuer" id="res_p1_tech">HTML, CSS, JS</div>
+                </div>
+  
+                <div class="cert_info">
+                  <div class="cert_name" id="res_p2_name">Online Python IDE</div>
+                  <div class="cert_issuer" id="res_p2_tech">HTML, CSS, JS</div>
+                </div>
+                
+                
+              </div>
+            </div>
+
+            <div class="projects">
+              <div class="cert_info_container">
+                <div class="cert_heading">EXPERIENCE</div>
+                
+                <div class="cert_info">
+                  <div class="cert_name" id="res_exp1_name">AWS Cloud Architect</div>
+                  <div class="cert_issuer" id="res_exp1_comp_dur">Amazon | 2023-Present</div>
+                </div>
+  
+                <div class="cert_info">
+                  <div class="cert_name" id="res_exp2_name">Security Engineer</div>
+                  <div class="cert_issuer" id="res_exp2_comp_dur">Google | 2020-2023</div>
+                </div>
+
+                
+                
+              </div>
+            </div>
+
+            <div class="projects">
+              <div class="cert_info_container">
+                <div class="cert_heading">SKILLS</div>
+                
+                <div class="cert_info">
+                  <div class="cert_name" id="res_s1">· Web Development</div>
+                  <div class="cert_name" id="res_s2">· Web Development</div>
+                  <div class="cert_name" id="res_s3">· Web Development</div>
+                  <div class="cert_name" id="res_s4">· Web Development</div>
+                  <!-- <div class="cert_issuer">Amazon | 2023-Present</div> -->
+                </div>
+  
+                
+
+                
+                
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </div>
+
+<script src="./getData.js"></script>
+
+</body>
+
+</html>
